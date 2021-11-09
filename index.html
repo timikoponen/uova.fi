@@ -38,8 +38,8 @@
             margin-top: 200px;
             margin-left: 50px;
             margin-right: 50px;
-            width: 400px;
-            max-width: 73%;
+            width: 450px;
+            max-width: calc(100% - 70px);
             filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.1));
         }
         #menu {
@@ -76,7 +76,7 @@
         h1 {
             font-family: 'Muli', sans-serif;
             font-weight: 600;
-            font-size: 64px;
+            font-size: 58px;
             line-height: 88px;
             margin: 40px 0 80px;
         }
@@ -135,6 +135,10 @@
             margin-left: -10px;
         }
         @media (max-width: 800px) {
+            #top .logo {
+                margin-left: 35px;
+                margin-right: 35px;
+            }
             h1 {
                 font-size: 48px;
                 line-height: 66px;
