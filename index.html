@@ -1,59 +1,231 @@
 <html>
-	<head>
-		<title>Uova Oy</title>
-        <link href="https://fonts.googleapis.com/css?family=Muli:600|Open+Sans:400,600&display=swap" rel="stylesheet">
-		<style>
-            body {
-                font-family: 'Open Sans', sans-serif;
-                color: #131313;
-                padding: 20px;
-                background-color: #fafafa;
-            }
-            h1, h2 {
-                font-family: 'Muli', sans-serif;
-                font-weight: 600;
-                padding: 0;
-                margin: 0;
-            }
+
+<head>
+    <title>Uova Oy</title>
+    <link href="https://fonts.googleapis.com/css?family=Muli:600|Open+Sans:400,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #232323;
+            /* background-color: #e5e5e5; */
+            background-image: linear-gradient(#f2f2f2 0px, #e5e5e5 350px, #efefef 800px, #f2f2f2);
+            margin: 0;
+            padding: 0;
+            line-height: 22px;
+        }
+        ::selection {
+            background: rgba(124, 200, 89, 0.3);
+        }
+        a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #c {
+            position: absolute;
+            width: 100%;
+            height: 900px;
+            z-index: -1;
+            max-height: 150vw;
+        }
+        #top {
+            position: relative;
+            height: 400px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        #top .logo {
+            margin-top: 175px;
+            margin-left: 50px;
+            margin-right: 50px;
+            width: 400px;
+            max-width: 73%;
+            filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.1));
+        }
+        #menu {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        .menu-link {
+            color: #232323;
+            font-size: 20px;
+            font-weight: normal;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .menu-link:hover {
+            text-decoration: none;
+            border-bottom: 2px solid #232323;
+        }
+        #content {
+            box-sizing: border-box;
+            margin: 20px auto 0;
+            padding: 50px;
+            max-width: 1000px;
+            /* background: rgba(255, 255, 255, 0.9); */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.75) 0px, rgba(255, 255, 255, 0.9) 400px);
+        }
+        #content a {
+            color: #7cc859;
+        }
+        #content a:hover {
+            color: #509b30;
+        }
+        h1 {
+            font-family: 'Muli', sans-serif;
+            font-weight: 600;
+            font-size: 60px;
+            line-height: 88px;
+            margin: 40px 0 80px;
+        }
+        h2 {
+            font-size: 22px;
+            line-height: 44px;
+            font-weight: 600;
+            margin-top: -12px;
+            margin-bottom: 22px;
+        }
+        h3 {
+            font-size: 20px;
+            line-height: 44px;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 22px;
+        }
+        h4 {
+            text-transform: uppercase;
+            font-size: 16px;
+            margin: 22px 0;
+            font-weight: 400;
+            opacity: 0.675;
+        }
+        p {
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 22px;
+        }
+        footer {
+            color: #808080;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer a {
+            color: #808080 !important;
+            text-decoration: none;
+        }
+        footer .logo {
+            width: 100px;
+            fill: #e5e5e5;
+        }
+        .our-work-title {
+            margin-top: 80px;
+        }
+        .our-work,
+        .intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+        }
+        .our-work div img {
+            width: 100%;
+        }
+
+        @media (max-width: 800px) {
             h1 {
-                font-size: 24px;
-                line-height: 40px;
-                margin-bottom: 40px;
+                font-size: 48px;
+                line-height: 66px;
             }
-            h2 {
-                font-size: 42px;
-                line-height: 60px;
+            .our-work,
+            .intro {
+                grid-template-columns: 1fr;
             }
-            p {
-                font-size: 16px;
-                line-height: 20px;
-                margin: 20px 0 0 0;
+            #content {
+                padding: 35px;
             }
-            a {
-                cursor: pointer;
-            }
-            footer {
-                color: #808080;
-                margin-top: 100px;
-            }
-            .projects {
-                margin-top: 50px;
-                font-weight: 600;
-            }
-        </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	</head>
-	<body>
-        <div id="content">
-            <h1>Uova</h1>
-            <h2>Creating the New</h2>
-            <p>We are creating novel apps and games.</p>
-            <p>You can reach us at <a href="mailto:hello@uova.fi">hello@uova.fi</a></p>
-            <p class="projects">Our Projects:</p>
-            <p>Ultralight - <a href="https://www.ultralightapp.com">ultralightapp.com</a></p>
-            <p>Ubi's Dimensions - <a href="https://www.ubisdimensions.com">ubisdimensions.com</a></p>
-            <p>Dragon Match! - <a href="https://www.dragonmatchgame.com">dragonmatchgame.com</a></p>
-            <footer>Uova Oy</footer>
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <div id="top">
+        <img class="logo" alt="Uova" src="Uova-white.svg" />
+        <div id="menu">
+            <a class="menu-link" href="#work">Our work</a>
+            <a class="menu-link" href="mailto:hello@uova.fi">Contact</a>
         </div>
-	</body>
+    </div>
+    <div id="content">
+        <h1>High-end look and feel <span style="color: #7cc859">interactive applications</span> with creative direction
+        </h1>
+        <div class="intro">
+            <div class="intro-left">
+                <h2>Uova is an independent digital design and development studio, focused on product development of novel
+                    mobile apps and games.</h2>
+                <h3>Uova was born from the passion in making superior products, and is formed around the work done by
+                    Timi Koponen.</h3>
+            </div>
+            <div class="intro-right">
+                <p>You can reach us to help with hands-on design, development and prototyping of interactive
+                    applications. We work with iOS, Unity, creative coding and web technologies.</p>
+                <p>We also offer high level consultancy to define and strengthen your mobile and product strategy in an
+                    advisor or a sparring role.</p>
+                <p>More than happy to give talks and presentations about our apps, product development or other more
+                    specific topics tailored for you.</p>
+                <p>Get in touch: <a href="mailto:hello@uova.fi">hello@uova.fi</a></p>
+            </div>
+        </div>
+
+        <h2 id="work" class="our-work-title">Our work:</h2>
+        <div class="our-work">
+            <div class="project">
+                <img src="ultralight.gif" alt="Ultralight - Photo Editor" />
+                <div>
+                    <h4>Ultralight - Photo Editor</h4>
+                    <p>Ultralight combines beautiful presets and an impressive suite of pro tools into a simple and
+                        intuitive photo editing application.</p>
+                    <p>Featured as App of the Day: <a href="https://apps.apple.com/us/story/id1446982070">Link</a></p>
+                    <p><a href="https://www.ultralightapp.com">Website</a> | <a
+                            href="https://apps.apple.com/app/id972428565">App Store</a></p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="ubis-dimensions.gif" alt="Ubi's Dimensions" />
+                <h4>Ubi's Dimensions</h4>
+                <p>Ubi's Dimensions is a beautiful three-dimensional puzzle game where you will help Ubi to defy gravity
+                    and get through mind-bending levels. Explore the rotating world and challenge your three-dimensional
+                    thinking.</p>
+                <p>Featured as Game of the Day: <a href="https://apps.apple.com/ca/story/id1495289055">Link</a></p>
+                <p><a href="https://www.ubisdimensions.com">Website</a> | <a
+                        href="https://apps.apple.com/us/app/ubis-dimensions/id1469107559">App Store</a> | <a
+                        href="https://play.google.com/store/apps/details?id=com.timikogames.ubisdimensions">Play
+                        Store</a></p>
+            </div>
+            <div class="project">
+                <img src="dragon-match.gif" alt="Dragon Match!" />
+                <h4>Dragon Match!</h4>
+                <p>Dragon Match is a new kind of puzzle game that you've been waiting for. Swipe to merge gems and hatch
+                    cute dragons!</p>
+                <p><a href="https://www.dragonmatchgame.com">Website</a> | <a
+                        href="https://apps.apple.com/us/app/dragon-match/id1503668536">App Store</a> | <a
+                        href="https://play.google.com/store/apps/details?id=com.uova.dragon.match">Play Store</a></p>
+            </div>
+            <div class="project">
+                <img src="tba.gif" alt="In development" />
+                <h4>To be announced</h4>
+                <p>Our upcoming new app. Currently in development. More details coming soon!</p>
+            </div>
+        </div>
+
+        <footer>
+            <div><a href="privacy-policy.html">Privacy Policy</a><br /><a href="terms.html">Terms of Service</a></div>
+            <img class="logo" alt="Uova" src="Uova-black.svg" />
+        </footer>
+    </div>
+    <script src="three.min.js"></script>
+    <script src="src.min.js"></script>
+</body>
+
 </html>
