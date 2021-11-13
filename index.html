@@ -29,13 +29,18 @@
         }
         #top {
             position: relative;
-            height: 400px;
+            height: 100px;
             max-width: 1000px;
             margin: 0 auto;
             padding-top: env(safe-area-inset-top);
         }
-        #top .logo {
-            margin-top: 200px;
+        #logo {
+            max-width: 1000px;
+            margin: 0 auto;
+            height: 300px;
+        }
+        #logo img {
+            margin-top: 100px;
             margin-left: 50px;
             margin-right: 50px;
             width: 450px;
@@ -154,29 +159,52 @@
                 width: calc(100% + 70px);
                 margin-left: -35px;
             }
-        }    
+        }
+        .present #top, .present #content {
+            display: none;
+        }
+        .present #logo {
+            width: 100%;
+            height: 100%;
+            max-width: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .present #logo img {
+            margin: 0;
+            width: 75vh;
+            max-width: 80vw;
+        }
+        .present #c {
+            width: 100% !important;
+            height: 100% !important;
+        }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 </head>
 
 <body>
     <canvas id="c"></canvas>
     <div id="top">
-        <img class="logo" alt="Uova" src="Uova-white.svg" />
         <div id="menu">
             <a class="menu-link" href="#work">Our work</a>
             <a class="menu-link" href="mailto:hello@uova.fi">Contact</a>
         </div>
+    </div>
+    <div id="logo">
+        <img alt="Uova" src="Uova-white.svg" />
     </div>
     <div id="content">
         <h1>High-end look and feel <span style="color: #7CC859">interactive applications</span> with creative direction
         </h1>
         <div class="intro">
             <div class="intro-left">
-                <h2>Uova is an independent digital design and development studio, focused on product development of novel
-                    mobile apps and games.</h2>
-                <h3>Uova was born from the passion in making superior products, and is formed around the work done by
-                    Timi Koponen.</h3>
+                <h2>Uova is an independent digital design and development studio, focused on product development of
+                    novel mobile apps and games.</h2>
+                <h3>Uova was born from the passion in making superior products, and is formed around the work done by <a
+                        href="https://www.linkedin.com/in/timi-koponen-a08421bb/">Timi Koponen</a>.</h3>
             </div>
             <div class="intro-right">
                 <p>You can reach us to help with hands-on design, development and prototyping of interactive
@@ -237,6 +265,9 @@
     </div>
     <script src="three.min.js"></script>
     <script src="src.min.js"></script>
+    <script>
+        if (window.location.href.endsWith("?present")) document.body.classList.add("present");
+    </script>
 </body>
 
 </html>
